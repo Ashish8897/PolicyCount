@@ -1,0 +1,63 @@
+  <!DOCTYPE html>
+<html>
+<head>
+<style>
+table {
+  border: 1px solid black;
+  table-layout:fixed;
+  width:40%;
+  
+}
+
+td,th{
+ border: 1px solid black;   
+  text-align: center;
+  width:40%;
+}
+</style>
+</head>
+
+<body>
+
+<table>
+<tr>
+<td>Product</td>
+
+<td>FL</td>
+
+<td>GA</td>
+
+<td>MI</td>
+
+<td>TN</td>
+
+<td>Total</td>
+</tr>
+
+</table>
+{%for result in counts%} 
+<!--- this table creation for transactions -->
+<table>
+<tr>
+{% for key1 ,values in result.items()%}
+<!--- transaction heading -->
+<th>{{key1}}</th>
+</tr>
+<!--- this table creation for counts -->
+<table >
+{% for key, value in values.items() %} 
+    <tr>
+      <td>{{key}}</td>
+      {%for data in value%}
+      <td >{{data}}</td>
+      {%endfor%}
+      </tr>
+   {% endfor %}
+
+     </table>  
+ 
+{%endfor%}
+
+{%endfor%}
+</body>
+</html>

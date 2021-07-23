@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>
+
+function f1() {
+
+
+  var From1 = $("#dt_from").val();
+    console.log(From1);
+var to1=$("#tm_from").val();
+console.log(typeof(to1))
+}
+
+</script>
+</head>
+   <body>
+      <div class="container">
+         <h2 style="text-aligh: center;">Date Selection</h2>
+          <form action="/getForm" method="post">
+            <label> Date from:
+            {{ form.from_date(class='datepicker') }}
+            {{ form.from_time(  ) }}
+            
+            </label>
+            <label>Date to:
+            {{ form.to_date(class='datepicker') }}
+            {{ form.to_time(  ) }}
+            </label>
+            {{ form.hidden_tag() }}
+                <input type="submit" onclick="f1()"/>
+            </form>
+           
+         </div>
+   </body>
+</html>
